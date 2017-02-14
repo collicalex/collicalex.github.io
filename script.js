@@ -150,7 +150,7 @@ function getGitHubProjects() {
 	ajax_getJSON(jsonurl, function(data) {
 		var html = "";
 		for (i = 0; i < data.length; ++i) {
-			if (data[i].name.indexOf('collicalex.github.io') == -1) {
+			if ((data[i].name.indexOf('collicalex.github.io') == -1) && (data[i].fork == false)) {
 				var projectName = document.createElement("div");
 				projectName.classList.add('projectName');
 				projectName.appendChild(document.createTextNode(data[i].name));
