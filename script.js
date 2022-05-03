@@ -159,11 +159,13 @@ function getGitHubProjects() {
 				projectDescription.classList.add('projectDescription');
 				projectDescription.appendChild(document.createTextNode(data[i].description));
 
-				var homepage = document.createElement("a");
-				homepage.classList.add('projectButton');
-				homepage.title = "Homepage";
-				homepage.href = data[i].homepage;
-				homepage.appendChild(document.createTextNode("Homepage"));
+				if (data[i].homepage != null) {
+					var homepage = document.createElement("a");
+					homepage.classList.add('projectButton');
+					homepage.title = "Homepage";
+					homepage.href = data[i].homepage;
+					homepage.appendChild(document.createTextNode("Homepage"));
+				}
 				
 				var source = document.createElement("a");
 				source.classList.add('projectButton');
@@ -179,7 +181,9 @@ function getGitHubProjects() {
 				
 				var buttons = document.createElement("div");
 				buttons.classList.add('projectButtons');
-				buttons.appendChild(homepage);
+				if (data[i].homepage != null) {
+					buttons.appendChild(homepage);
+				}
 				buttons.appendChild(source);
 				buttons.appendChild(release);
 				
