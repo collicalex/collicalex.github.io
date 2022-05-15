@@ -159,13 +159,11 @@ function getGitHubProjects() {
 				projectDescription.classList.add('projectDescription');
 				projectDescription.appendChild(document.createTextNode(data[i].description));
 
-				if (data[i].homepage != null) {
-					var homepage = document.createElement("a");
-					homepage.classList.add('projectButton');
-					homepage.title = "Homepage";
-					homepage.href = data[i].homepage;
-					homepage.appendChild(document.createTextNode("Homepage"));
-				}
+				var homepage = document.createElement("a");
+				homepage.classList.add('projectButton');
+				homepage.title = "Homepage";
+				homepage.href = data[i].homepage;
+				homepage.appendChild(document.createTextNode("Homepage"));
 				
 				var source = document.createElement("a");
 				source.classList.add('projectButton');
@@ -181,9 +179,7 @@ function getGitHubProjects() {
 				
 				var buttons = document.createElement("div");
 				buttons.classList.add('projectButtons');
-				if (data[i].homepage != null) {
-					buttons.appendChild(homepage);
-				}
+				buttons.appendChild(homepage);
 				buttons.appendChild(source);
 				buttons.appendChild(release);
 				
@@ -260,10 +256,16 @@ function addArrowsToSlideShow(elt) {
 
 function addDotsToSlideshow(elt) {
 	var slides = elt.getElementsByClassName("slide");
-	var dotsTxt = "<div style='text-align:center'>";
+	var dotsTxt = "<div style='text-align:center; position:relative; top:-135px'>";
 	for (var i = 0; i < slides.length; ++i) {
 		dotsTxt += "<span class='slide-dot' onclick='showSlide(this, "+i+")'></span>\r\n";
 	}
 	dotsTxt += "</div>";
 	elt.innerHTML += dotsTxt;
+	
+	var slidesTxt = elt.getElementsByClassName("slide-text");
+	for (var i = 0; i < slidesTxt.length; ++i) {
+		slidesTxt[i].style.position = 'relative';
+		slidesTxt[i].style.top = '45px';
+	}
 }
