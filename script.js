@@ -5,7 +5,7 @@
 function writeHeader() {
 	document.write("<div id='header'>");
 	document.write("<a href='https://collicalex.github.io/' id='header-logo'>Collicalex</a> <span id='header-logo-tooltip'>&larr; take a look at my other projects made with <span class='heart'>&hearts;</span></span>");
-	document.write("<a href='https://www.flickr.com/photos/colliculus/' id='header-avatar'></a><span id='header-avatar-tooltip2'>See my photo on Flickr &rarr;</span>");
+	document.write("<a href='https://www.instagram.com/collicalex'/' id='header-avatar'></a><span id='header-avatar-tooltip2'>See my photo on Instagram &rarr;</span>");
 	document.write("</div>");
 }
 
@@ -53,7 +53,7 @@ function writePreFooter() {
 	document.write("<h2>Follow me</h2>");
 	document.write("<p>You can follow me:");
 	document.write("<ul>");
-	document.write("<li>as photographer on <a href='https://www.flickr.com/photos/colliculus'>Flickr</a></li>");
+	document.write("<li>as photographer on <a href='https://www.instagram.com/collicalex'>Instagram</a> and <a href='https://www.flickr.com/photos/colliculus'>Flickr</a></li>");
 	document.write("<li>as developer on <a href='https://github.com/collicalex'>GitHub</a></li>");
 	document.write("</ul>");
 	document.write("</p>");
